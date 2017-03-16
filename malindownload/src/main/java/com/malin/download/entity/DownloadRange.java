@@ -1,9 +1,8 @@
 package com.malin.download.entity;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/10/21
- * Time: 15:28
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * Download Range
  */
 public class DownloadRange {

@@ -41,9 +41,8 @@ import static com.malin.download.db.Db.RecordTable.update;
 import static com.malin.download.entity.DownloadFlag.PAUSED;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/14
- * Time: 10:02
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 public class DataBaseHelper {

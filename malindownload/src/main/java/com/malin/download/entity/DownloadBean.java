@@ -3,9 +3,8 @@ package com.malin.download.entity;
 import java.io.Serializable;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2017/2/17
- * Time: 22:06
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 public class DownloadBean {

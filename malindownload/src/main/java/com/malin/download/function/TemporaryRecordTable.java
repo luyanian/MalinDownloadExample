@@ -20,8 +20,8 @@ import static com.malin.download.function.Utils.log;
 import static com.malin.download.function.Utils.notSupportRange;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2017/2/4
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 public class TemporaryRecordTable {

@@ -8,9 +8,8 @@ import java.text.NumberFormat;
 import static com.malin.download.function.Utils.formatSize;
 
 /**
- * User: Season(ssseasonnn@gmail.com)
- * Date: 2016-07-15
- * Time: 15:48
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * 表示下载状态, 如果isChunked为true, totalSize 可能不存在
  */
 public class DownloadStatus implements Parcelable {

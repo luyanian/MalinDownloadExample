@@ -30,8 +30,8 @@ import static com.malin.download.function.Utils.mkdirs;
 import static java.io.File.separator;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2017/2/4
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 public class TemporaryRecord {

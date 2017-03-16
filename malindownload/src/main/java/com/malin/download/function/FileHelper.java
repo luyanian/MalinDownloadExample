@@ -25,10 +25,8 @@ import static com.malin.download.function.Utils.longToGMT;
 import static java.nio.channels.FileChannel.MapMode.READ_WRITE;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/17
- * Time: 10:35
- * <p>
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * File Helper
  */
 public class FileHelper {

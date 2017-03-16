@@ -41,9 +41,8 @@ import static com.malin.download.function.Utils.getFiles;
 import static com.malin.download.function.Utils.log;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/10
- * Time: 09:49
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 public class DownloadService extends Service {

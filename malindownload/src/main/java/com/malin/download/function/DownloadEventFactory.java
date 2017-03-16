@@ -11,9 +11,8 @@ import static com.malin.download.entity.DownloadFlag.STARTED;
 import static com.malin.download.entity.DownloadFlag.WAITING;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/23
- * Time: 14:18
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 public class DownloadEventFactory {

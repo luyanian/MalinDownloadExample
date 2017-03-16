@@ -5,9 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/14
- * Time: 10:02
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 class DbOpenHelper extends SQLiteOpenHelper {

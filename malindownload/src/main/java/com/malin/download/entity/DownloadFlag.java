@@ -1,9 +1,8 @@
 package com.malin.download.entity;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/23
- * Time: 14:32
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 public class DownloadFlag {

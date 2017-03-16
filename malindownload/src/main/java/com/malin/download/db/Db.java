@@ -11,9 +11,8 @@ import java.util.Date;
 import static com.malin.download.function.Utils.empty;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/14
- * Time: 10:02
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 class Db {

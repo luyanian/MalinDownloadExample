@@ -11,10 +11,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/10/19
- * Time: 10:16
- * <p>
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * 提供一个默认的,线程安全的Retrofit单例
  */
 public class RetrofitProvider {

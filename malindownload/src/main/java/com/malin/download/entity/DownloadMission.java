@@ -9,9 +9,8 @@ import java.util.concurrent.Semaphore;
 import io.reactivex.processors.FlowableProcessor;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/18
- * Time: 11:38
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * <p>
  * Represents a download task
  */

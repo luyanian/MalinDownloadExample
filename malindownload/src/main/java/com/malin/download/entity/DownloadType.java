@@ -47,9 +47,8 @@ import static com.malin.download.function.Utils.formatStr;
 import static com.malin.download.function.Utils.log;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/3
- * Time: 09:44
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * Download Type
  */
 public abstract class DownloadType {

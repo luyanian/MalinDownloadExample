@@ -55,9 +55,8 @@ import static java.util.Locale.getDefault;
 import static java.util.TimeZone.getTimeZone;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/2
- * Time: 09:07
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * 工具类
  */
 public class Utils {

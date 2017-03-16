@@ -3,9 +3,8 @@ package com.malin.download.entity;
 import static com.malin.download.entity.DownloadFlag.NORMAL;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/14
- * Time: 11:31
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 public class DownloadRecord {

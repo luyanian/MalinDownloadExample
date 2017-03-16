@@ -24,9 +24,8 @@ import static com.malin.download.function.Utils.createProcessor;
 import static com.malin.download.function.Utils.formatStr;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2017/2/24
- * <p>
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * MultiMission, many urls.
  */
 public class MultiMission extends DownloadMission {

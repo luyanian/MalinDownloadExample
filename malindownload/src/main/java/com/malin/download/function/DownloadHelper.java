@@ -35,9 +35,8 @@ import static com.malin.download.function.Utils.log;
 import static com.malin.download.function.Utils.retry;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/11/2
- * Time: 09:39
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * Download helper
  */
 public class DownloadHelper {

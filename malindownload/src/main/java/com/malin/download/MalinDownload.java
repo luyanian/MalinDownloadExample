@@ -43,9 +43,8 @@ import retrofit2.Retrofit;
 import static com.malin.download.function.Utils.log;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/10/19
- * Time: 10:46
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * MalinDownload
  */
 public class MalinDownload {
@@ -599,6 +598,21 @@ public class MalinDownload {
             list.add(new DownloadBean.Builder(each).build());
         }
         return serviceMultiDownload(list, missionId);
+    }
+
+    /**
+     * Using Service to download multi bean.
+     * @param bean
+     * @param missionId
+     * @return
+     */
+    public Observable<?> serviceMultiDownload(final DownloadBean bean, final String missionId) {
+        return createGeneralObservable(new GeneralObservableCallback() {
+            @Override
+            public void call() throws Exception {
+                downloadService.addDownloadMission(new SingleMission(MalinDownload.this,bean,missionId));
+            }
+        });
     }
 
     /**

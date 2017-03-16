@@ -11,9 +11,8 @@ import retrofit2.http.Streaming;
 import retrofit2.http.Url;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2016/10/19
- * Time: 10:02
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * Download Api
  */
 public interface DownloadApi {

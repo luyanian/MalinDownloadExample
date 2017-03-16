@@ -1,8 +1,8 @@
 package com.malin.download.function;
 
 /**
- * Author: Season(ssseasonnn@gmail.com)
- * Date: 2017/1/13
+ * Author: luyanian(luyanian@foxmail.com)
+ * Date: 2017/03/16
  * FIXME
  */
 public final class Constant {
