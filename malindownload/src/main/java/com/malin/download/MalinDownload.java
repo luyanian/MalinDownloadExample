@@ -612,7 +612,7 @@ public class MalinDownload {
             public void call() throws Exception {
                 downloadService.addDownloadMission(new SingleMission(MalinDownload.this,bean,missionId));
             }
-        });
+        }).observeOn(AndroidSchedulers.mainThread());
     }
 
     /**

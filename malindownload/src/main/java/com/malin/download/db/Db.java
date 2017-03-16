@@ -76,7 +76,7 @@ class Db {
             values.put(COLUMN_EXTRA4, bean.getExtra4());
             values.put(COLUMN_EXTRA5, bean.getExtra5());
             values.put(COLUMN_DATE, new Date().getTime());
-            if (empty(missionId)) {
+            if (!empty(missionId)) {
                 values.put(COLUMN_MISSION_ID, missionId);
             }
             return values;
@@ -99,7 +99,7 @@ class Db {
         static ContentValues update(int flag, String missionId) {
             ContentValues values = new ContentValues();
             values.put(COLUMN_DOWNLOAD_FLAG, flag);
-            if (empty(missionId)) {
+            if (!empty(missionId)) {
                 values.put(COLUMN_MISSION_ID, missionId);
             }
             return values;

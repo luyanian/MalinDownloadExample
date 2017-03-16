@@ -161,6 +161,7 @@ public class DataBaseHelper {
      * @return Records
      */
     public List<DownloadRecord> readMissionsRecord(String missionId) {
+        List<DownloadRecord> result = new ArrayList<>();
         Cursor cursor = null;
         try {
             cursor = getReadableDatabase().query(TABLE_NAME,
@@ -169,19 +170,19 @@ public class DataBaseHelper {
                             COLUMN_EXTRA1, COLUMN_EXTRA2, COLUMN_EXTRA3, COLUMN_EXTRA4,
                             COLUMN_EXTRA5, COLUMN_DOWNLOAD_FLAG, COLUMN_DATE, COLUMN_MISSION_ID},
                     COLUMN_MISSION_ID + "=?", new String[]{missionId}, null, null, null);
-            List<DownloadRecord> result = new ArrayList<>();
+
             cursor.moveToFirst();
             if (cursor.getCount() > 0) {
                 do {
                     result.add(read(cursor));
                 } while (cursor.moveToNext());
             }
-            return result;
         } finally {
             if (cursor != null) {
                 cursor.close();
             }
         }
+        return result;
     }
 
     /**

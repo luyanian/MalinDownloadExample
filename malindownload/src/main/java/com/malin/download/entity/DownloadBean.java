@@ -16,6 +16,7 @@ public class DownloadBean {
     private String extra3;
     private String extra4;
     private String extra5;
+    private String missionId;
 
     public DownloadBean() {
     }
@@ -84,6 +85,14 @@ public class DownloadBean {
         this.extra5 = extra5;
     }
 
+    public String getMissionId() {
+        return missionId;
+    }
+
+    public void setMissionId(String missionId) {
+        this.missionId = missionId;
+    }
+
     public static class Builder {
         private String url;
         private String saveName;
@@ -93,6 +102,7 @@ public class DownloadBean {
         private String extra3;
         private String extra4;
         private String extra5;
+        private String missionId;
 
         public Builder(String url) {
             this.url = url;
@@ -133,6 +143,11 @@ public class DownloadBean {
             return this;
         }
 
+        public Builder setMissionId(String missionId) {
+            this.missionId = missionId;
+            return this;
+        }
+
         public DownloadBean build() {
             DownloadBean bean = new DownloadBean();
             bean.setUrl(this.url);
@@ -143,6 +158,7 @@ public class DownloadBean {
             bean.setExtra3(this.extra3);
             bean.setExtra4(this.extra4);
             bean.setExtra5(this.extra5);
+            bean.setMissionId(this.missionId);
             return bean;
         }
     }

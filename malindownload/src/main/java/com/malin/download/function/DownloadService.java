@@ -46,7 +46,7 @@ import static com.malin.download.function.Utils.log;
  * FIXME
  */
 public class DownloadService extends Service {
-    public static final String INTENT_KEY = "zlc_season_rxdownload_max_download_number";
+    public static final String INTENT_KEY = "ryon_malindownload_max_download_number";
 
     private DownloadBinder mBinder;
 

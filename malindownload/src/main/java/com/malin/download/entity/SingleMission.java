@@ -45,6 +45,7 @@ public class SingleMission extends DownloadMission {
         super(rxdownload);
         this.bean = bean;
     }
+
     public SingleMission(MalinDownload rxdownload, DownloadBean bean,String missionId) {
         super(rxdownload);
         this.bean = bean;
