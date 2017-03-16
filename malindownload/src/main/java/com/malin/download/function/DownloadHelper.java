@@ -314,15 +314,19 @@ public class DownloadHelper {
                 .compose(retry(REQUEST_RETRY_HINT, maxRetryCount));
     }
 
-    public Observable<List<DownloadRecord>> readAllRecords() {
+    public List<DownloadRecord> readAllRecords() {
         return dataBaseHelper.readAllRecords();
     }
 
-    public Observable<DownloadRecord> readRecord(String url) {
+    public DownloadRecord readRecord(String url) {
         return dataBaseHelper.readRecord(url);
     }
 
     public boolean isExistDownloadRecord(String url) {
         return !dataBaseHelper.recordNotExists(url);
+    }
+
+    public List<DownloadRecord> readMultiRecords(String missionId) {
+        return dataBaseHelper.readMissionsRecord(missionId);
     }
 }

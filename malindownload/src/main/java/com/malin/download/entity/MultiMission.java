@@ -69,7 +69,7 @@ public class MultiMission extends DownloadMission {
     };
 
     public MultiMission(MultiMission other) {
-        super(other.rxdownload);
+        super(other.malinDownload);
         this.missionId = other.getUrl();
         this.missions = new ArrayList<>();
         this.completeNumber = new AtomicInteger(0);

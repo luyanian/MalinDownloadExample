@@ -216,38 +216,28 @@ public class DataBaseHelper {
      *
      * @return All records.
      */
-    public Observable<List<DownloadRecord>> readAllRecords() {
-        return Observable
-                .create(new ObservableOnSubscribe<List<DownloadRecord>>() {
-                    @Override
-                    public void subscribe(ObservableEmitter<List<DownloadRecord>> emitter)
-                            throws Exception {
-                        Cursor cursor = null;
-                        try {
-                            cursor = getReadableDatabase().query(TABLE_NAME,
-                                    new String[]{COLUMN_ID, COLUMN_URL, COLUMN_SAVE_NAME, COLUMN_SAVE_PATH,
-                                            COLUMN_DOWNLOAD_SIZE, COLUMN_TOTAL_SIZE, COLUMN_IS_CHUNKED,
-                                            COLUMN_EXTRA1, COLUMN_EXTRA2, COLUMN_EXTRA3, COLUMN_EXTRA4,
-                                            COLUMN_EXTRA5, COLUMN_DOWNLOAD_FLAG, COLUMN_DATE, COLUMN_MISSION_ID},
-                                    null, null, null, null, null);
-                            List<DownloadRecord> result = new ArrayList<>();
-                            cursor.moveToFirst();
-                            if (cursor.getCount() > 0) {
-                                do {
-                                    result.add(read(cursor));
-                                } while (cursor.moveToNext());
-                            }
-                            emitter.onNext(result);
-                            emitter.onComplete();
-                        } finally {
-                            if (cursor != null) {
-                                cursor.close();
-                            }
-                        }
-                    }
-                })
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
+    public List<DownloadRecord> readAllRecords() {
+        List<DownloadRecord> result = new ArrayList<>();
+        Cursor cursor = null;
+        try {
+            cursor = getReadableDatabase().query(TABLE_NAME,
+                    new String[]{COLUMN_ID, COLUMN_URL, COLUMN_SAVE_NAME, COLUMN_SAVE_PATH,
+                            COLUMN_DOWNLOAD_SIZE, COLUMN_TOTAL_SIZE, COLUMN_IS_CHUNKED,
+                            COLUMN_EXTRA1, COLUMN_EXTRA2, COLUMN_EXTRA3, COLUMN_EXTRA4,
+                            COLUMN_EXTRA5, COLUMN_DOWNLOAD_FLAG, COLUMN_DATE, COLUMN_MISSION_ID},
+                    null, null, null, null, null);
+            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                do {
+                    result.add(read(cursor));
+                } while (cursor.moveToNext());
+            }
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+        return result;
     }
 
     /**
@@ -258,35 +248,26 @@ public class DataBaseHelper {
      * @param url url
      * @return record
      */
-    public Observable<DownloadRecord> readRecord(final String url) {
-        return Observable
-                .create(new ObservableOnSubscribe<DownloadRecord>() {
-                    @Override
-                    public void subscribe(ObservableEmitter<DownloadRecord> emitter) throws Exception {
-                        Cursor cursor = null;
-                        try {
-                            cursor = getReadableDatabase().query(TABLE_NAME,
-                                    new String[]{COLUMN_ID, COLUMN_URL, COLUMN_SAVE_NAME, COLUMN_SAVE_PATH,
-                                            COLUMN_DOWNLOAD_SIZE, COLUMN_TOTAL_SIZE, COLUMN_IS_CHUNKED,
-                                            COLUMN_EXTRA1, COLUMN_EXTRA2, COLUMN_EXTRA3, COLUMN_EXTRA4,
-                                            COLUMN_EXTRA5, COLUMN_DOWNLOAD_FLAG, COLUMN_DATE, COLUMN_MISSION_ID},
-                                    COLUMN_URL + "=?", new String[]{url}, null, null, null);
-                            cursor.moveToFirst();
-                            if (cursor.getCount() == 0) {
-                                emitter.onNext(new DownloadRecord());
-                            } else {
-                                emitter.onNext(read(cursor));
-                            }
-                            emitter.onComplete();
-                        } finally {
-                            if (cursor != null) {
-                                cursor.close();
-                            }
-                        }
-                    }
-                })
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
+    public DownloadRecord readRecord(final String url) {
+        DownloadRecord downloadRecord = null;
+        Cursor cursor = null;
+        try {
+            cursor = getReadableDatabase().query(TABLE_NAME,
+                    new String[]{COLUMN_ID, COLUMN_URL, COLUMN_SAVE_NAME, COLUMN_SAVE_PATH,
+                            COLUMN_DOWNLOAD_SIZE, COLUMN_TOTAL_SIZE, COLUMN_IS_CHUNKED,
+                            COLUMN_EXTRA1, COLUMN_EXTRA2, COLUMN_EXTRA3, COLUMN_EXTRA4,
+                            COLUMN_EXTRA5, COLUMN_DOWNLOAD_FLAG, COLUMN_DATE, COLUMN_MISSION_ID},
+                    COLUMN_URL + "=?", new String[]{url}, null, null, null);
+            cursor.moveToFirst();
+            if (cursor.getCount() != 0) {
+                downloadRecord = read(cursor);
+            }
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+        return downloadRecord;
     }
 
     public void closeDataBase() {

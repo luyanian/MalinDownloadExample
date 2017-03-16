@@ -16,13 +16,13 @@ import io.reactivex.processors.FlowableProcessor;
  * Represents a download task
  */
 public abstract class DownloadMission {
-    protected MalinDownload rxdownload;
+    protected MalinDownload malinDownload;
     FlowableProcessor<DownloadEvent> processor;
     private boolean canceled = false;
     private boolean completed = false;
 
-    DownloadMission(MalinDownload rxdownload) {
-        this.rxdownload = rxdownload;
+    DownloadMission(MalinDownload malinDownload) {
+        this.malinDownload = malinDownload;
     }
 
     public boolean isCanceled() {

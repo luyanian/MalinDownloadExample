@@ -46,6 +46,11 @@ public class SingleMission extends DownloadMission {
         super(rxdownload);
         this.bean = bean;
     }
+    public SingleMission(MalinDownload rxdownload, DownloadBean bean,String missionId) {
+        super(rxdownload);
+        this.bean = bean;
+        this.missionId = missionId;
+    }
 
     public SingleMission(MalinDownload rxDownload, DownloadBean bean,
                          String missionId, Observer<DownloadStatus> observer) {
@@ -56,7 +61,7 @@ public class SingleMission extends DownloadMission {
     }
 
     public SingleMission(SingleMission other) {
-        super(other.rxdownload);
+        super(other.malinDownload);
         this.bean = other.getBean();
         this.missionId = other.getMissionId();
         this.observer = other.getObserver();
@@ -123,7 +128,7 @@ public class SingleMission extends DownloadMission {
             return;
         }
 
-        disposable = rxdownload.download(bean)
+        disposable = malinDownload.download(bean)
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override

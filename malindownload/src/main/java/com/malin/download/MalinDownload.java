@@ -32,6 +32,7 @@ import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
@@ -206,8 +207,12 @@ public class MalinDownload {
      *
      * @return Observable<List<DownloadRecord>>
      */
-    public Observable<List<DownloadRecord>> getTotalDownloadRecords() {
+    public List<DownloadRecord> getTotalDownloadRecords() {
         return downloadHelper.readAllRecords();
+    }
+
+    public List<DownloadRecord> getMultiDownloadRecords(String missionId) {
+        return downloadHelper.readMultiRecords(missionId);
     }
 
     /**
@@ -217,7 +222,7 @@ public class MalinDownload {
      * @param url download url
      * @return Observable<DownloadStatus>
      */
-    public Observable<DownloadRecord> getDownloadRecord(String url) {
+    public DownloadRecord getDownloadRecord(String url) {
         return downloadHelper.readRecord(url);
     }
 
@@ -499,6 +504,15 @@ public class MalinDownload {
         }).observeOn(AndroidSchedulers.mainThread());
     }
 
+    public Observable<?> serviceDoanload(final DownloadBean bean, final String misstionId) {
+        return  createGeneralObservable(new GeneralObservableCallback() {
+            @Override
+            public void call() throws Exception {
+                downloadService.addDownloadMission(new SingleMission(MalinDownload.this,bean,misstionId));
+            }
+        }).observeOn(AndroidSchedulers.mainThread());
+    }
+
     /**
      * Service download version of the Transformer.
      *
@@ -559,6 +573,7 @@ public class MalinDownload {
             }
         };
     }
+
 
     /**
      * Using Service to download multi urls.
