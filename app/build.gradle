@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.malin.download.example"
-        minSdkVersion 9
+        minSdkVersion 11
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -27,4 +30,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
     testCompile 'junit:junit:4.12'
     compile project(':malindownload')
+    compile 'zlc.season:practicalrecyclerview:1.0.8'
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.8.2@aar'
+    compile 'online.osslab:CircleProgress:1.0.0'
+    compile "com.android.support:support-annotations:25.3.0"
+    compile "com.android.support:design:25.3.0"
+    //
+    compile "com.jakewharton:butterknife:8.4.0"
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    annotationProcessor "com.jakewharton:butterknife-compiler:8.4.0"
 }
